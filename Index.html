@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Production-ready FIFA World Cup carousel generator for Instagram." />
+  <title>FIFA Match Carousel Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js" defer></script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="panel controls">
+      <div class="top"><div><div class="eyebrow">Production ready</div><h1>Carousel Studio</h1><p>Instagram-first 5-slide carousels for the next World Cup match.</p></div><button class="theme-toggle" id="theme-toggle" aria-label="Switch theme">☾</button></div>
+      <div class="group"><label for="data-source">Match source</label><select id="data-source"><option value="demo">Built-in demo fixtures</option><option value="api">WorldCupAPI key</option></select></div>
+      <div class="group"><label for="api-key">WorldCupAPI key</label><input id="api-key" type="password" placeholder="Paste API key" autocomplete="off"></div>
+      <div class="group"><label for="brand-handle">Instagram handle</label><input id="brand-handle" type="text" value="@yourfootballpage"></div>
+      <div class="group"><label for="change-prompt">Quick changes</label><textarea id="change-prompt" placeholder="Example: make it more dramatic, change CTA to 'Who takes this one?'"></textarea></div>
+      <div class="btn-row"><button class="btn btn-primary" id="make-carousel">Make carousel</button><button class="btn btn-secondary" id="download-all">Download PNGs</button></div>
+      <div class="meta"><div class="meta-card"><strong>Instagram format</strong><div>1080 × 1350 px, 4:5 portrait.</div></div><div class="meta-card"><strong>API tip</strong><div>Use the key field in API mode. The app passes it as <code>?key=YOUR_KEY</code>.</div></div><div class="meta-card"><strong>Live deploy</strong><div>Upload this folder to Vercel or Netlify as a static site.</div></div><div class="meta-card"><strong>Status</strong><div class="status" id="status">Ready. Click "Make carousel".</div></div></div>
+    </aside>
+    <main class="workspace">
+      <div class="toolbar"><div><div class="eyebrow">Preview board</div><div>Slides update live from your prompt edits.</div></div><div id="match-summary">No match loaded yet.</div></div>
+      <section class="slides" id="slides"></section>
+    </main>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
